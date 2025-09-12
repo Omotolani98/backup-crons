@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Task
+metadata:
+  name: backup-db
+spec:
+  schedule: "0 2 * * *"
+  timezone: "Africa/Lagos"
+  concurrencyPolicy: Forbid
+  retry:
+    maxAttempts: 3
+    backoff: "30s,2m,5m"
+  executor:
+    type: process
+    command: ["pg_dump"]
+    args: ["-h", "db.internal", "-U", "admin", "mydb"]
