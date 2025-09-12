@@ -1,9 +1,9 @@
 apiVersion: monocron.io/v1
 kind: Task
 metadata:
-  name: backup-db-pg
+  name: backup-db
 spec:
-  schedule: "0 2 * * *"
+  schedule: "5 * * * *"
   timezone: "Africa/Lagos"
   concurrencyPolicy: Forbid
   retry:
