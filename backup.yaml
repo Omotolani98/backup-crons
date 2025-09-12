@@ -7,7 +7,7 @@ spec:
   timezone: "Africa/Lagos"
   concurrencyPolicy: Forbid
   retry:
-    maxAttempts: 3
+    maxAttempts: 2
     backoff: "30s,2m,5m"
   executor:
     type: process
