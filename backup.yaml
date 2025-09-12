@@ -8,7 +8,7 @@ spec:
   concurrencyPolicy: Forbid
   retry:
     maxAttempts: 2
-    backoff: "30s,2m,5m"
+    backoff: "15s,30s,2m,5m"
   executor:
     type: process
     command: ["pg_dump"]
