@@ -3,7 +3,7 @@ kind: Task
 metadata:
   name: backup-db
 spec:
-  schedule: "5 * * * *"
+  schedule: "2 * * * *"
   timezone: "Africa/Lagos"
   concurrencyPolicy: Forbid
   retry:
