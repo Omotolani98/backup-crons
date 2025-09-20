@@ -1,15 +1,10 @@
 apiVersion: monocron.io/v1
-kind: Task
+kind: Job
 metadata:
-  name: backup-db
+  name: Echo Hello
 spec:
   schedule: "2 * * * *"
   timezone: "Africa/Lagos"
-  concurrencyPolicy: Forbid
-  retry:
-    maxAttempts: 2
-    backoff: "15s,30s,2m,5m"
+  timeout: "30"
   executor:
-    type: process
-    command: ["pg_dump"]
-    args: ["-h", "db.internal", "-U", "admin", "mydb"]
+    command: ["echo", "Hello World"]
